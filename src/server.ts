@@ -2,7 +2,7 @@
 
 const express = require('express');
 
-app.use(express.static(__dirname + '/dist'));
+// app.use(express.static(__dirname + '/dist'));
 // Import the app object
 import app from "./app";
 // Define a const for the port
