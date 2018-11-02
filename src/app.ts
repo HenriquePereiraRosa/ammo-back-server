@@ -1,13 +1,15 @@
 // src/app.ts
-import * as express from "express";
-import * as bodyParser from "body-parser";
-import { Routes } from "./routes/apiRoutes";
-import * as mongoose from "mongoose";
-import * as cors from "cors";
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import { Routes } from './routes/apiRoutes';
+import * as mongoose from './../node_modules/mongoose';
+import * as cors from 'cors';
+import { env } from './environments/environment';
+
 // App class
 class App {
     // URL do MongoDB
-    public mongoUrl: string = 'mongodb://localhost/ToDodb';
+    public mongoUrl: string = 'mongodb://admin:password8@ds149593.mlab.com:49593/mongdb-ammo-test';
     // app is the object of express app
     public app: express.Application;
     // routes object
@@ -32,9 +34,28 @@ class App {
         // enable all CORS requests
         this.app.use(cors());
     }
+
     private mongoSetup(): void {
         mongoose.Promise = global.Promise;
-        mongoose.connect(this.mongoUrl);
+        mongoose.set('useFindAndModify', true);
+        mongoose.set('useCreateIndex', true);
+        (async function () {
+            try {
+                const client = await mongoose.connect(env.mongoUrl, {
+                    auth: {
+                        user: env.MONGO_DB_USER,
+                        password: env.MONGO_DB_PASSWORD
+                    },
+                    useNewUrlParser: true });
+                
+                // DEBUG:
+                console.log('Connected!');
+                // ... anything          
+                // client.close();
+            } catch (e) {
+                console.error(e)
+            }
+        })()
     }
 }
 // export a new App object

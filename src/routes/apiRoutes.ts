@@ -1,24 +1,33 @@
 import { Request, Response } from "express";
 import { Application } from "express";
-import { TodoController } from "../controllers/todoController"
+import { ResourceController } from "../controllers/resourceController"
 // Routes - define the app routes
 export class Routes {
-    // Todo Controller
-    public todoController: TodoController = new TodoController();
+    // Resource Controller
+    public resourceController: ResourceController = new ResourceController();
     public routes(app: Application): void {
-        // ToDo's
-        app.route('/todo')
+        app.route('/')
+            .get((req: Request, res: Response) => {
+                res.status(200).send({
+                    message: 'GET response. Express working...'
+                });
+                this.resourceController.addNewResource;
+            });
+
+        // Resource's
+        app.route('/resource')
             // GET endpoint
-            .get(this.todoController.getTodos)
+            .get(this.resourceController.getResources)
             // POST endpoint
-            .post(this.todoController.addNewTodo);
-        // ToDo get, put and delete a specific todo
-        app.route('/todo/:id')
-            // get specific todo
-            .get(this.todoController.getContactWithID)
+            .post(this.resourceController.addNewResource)
+
+        // ToDo get, put and delete a specific resource
+        app.route('/resource/:id')
+            // get specific resource
+            .get(this.resourceController.getContactWithID)
             // PUT endpoint
-            .put(this.todoController.updateTodo)
+            .put(this.resourceController.updateResource)
             // DELETE endpoint
-            .delete(this.todoController.deleteContact);        
+            .delete(this.resourceController.deleteContact);
     }
 }
