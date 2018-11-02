@@ -1,0 +1,17 @@
+
+Entidade Itens de Lista de Compras
+
+resources: {
+	__id : auto,
+	image1 : String,
+	image2 : String,
+	image3 : String,
+	image4 : String,
+	description: String,
+	categoty: String,
+	normal-price: number,
+	promo-price: number,
+
+	}
+
+

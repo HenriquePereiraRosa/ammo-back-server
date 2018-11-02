@@ -18,8 +18,6 @@ export class ResourceController {
                 res.send(err);
             }
             // Else send back the inserted record
-            // DEBUG
-            console.log("SAVED!")
             res.json(resource);
         });
     }

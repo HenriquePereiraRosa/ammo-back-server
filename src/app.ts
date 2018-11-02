@@ -8,8 +8,6 @@ import { env } from './environments/environment';
 
 // App class
 class App {
-    // URL do MongoDB
-    public mongoUrl: string = 'mongodb://admin:password8@ds149593.mlab.com:49593/mongdb-ammo-test';
     // app is the object of express app
     public app: express.Application;
     // routes object
@@ -39,6 +37,7 @@ class App {
         mongoose.Promise = global.Promise;
         mongoose.set('useFindAndModify', true);
         mongoose.set('useCreateIndex', true);
+        
         (async function () {
             try {
                 const client = await mongoose.connect(env.mongoUrl, {
