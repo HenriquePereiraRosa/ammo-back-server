@@ -9,9 +9,20 @@ resources: {
 	image4 : String,
 	description: String,
 	categoty: String,
-	normal-price: number,
-	promo-price: number,
+	normalPrice: number,
+	promoPrice: number,
 
 	}
 
 
+
+IMAGES URL:
+
+1)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/semi-environment/l_nb81fop19esapng1534966459400.jpeg
+2)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/still/l_n38camv19czpng1540308022867.jpeg
+3)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/semi-environment/l_n3hmaqp19czapng1537194087652.jpeg
+4)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/semi-environment/l_nuhgrcp19roapng1534274318326.jpeg
+5)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/semi-environment/l_n28natv19mrapng1537193363791.jpeg
+6)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/semi-environment/l_nuh1fbp19azapng1537993354659.jpeg
+7)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/still/L_NSH.1FBO18OW.png.1524497661654.jpeg
+8)https://dgn7v532p0g5j.cloudfront.net/unsafe/0x0/products/photos/semi-environment/l_nu81fop19rsapng1534272541842.jpeg

@@ -33,7 +33,7 @@ export const ResourceSchema = new Schema({
         required: 'Enter a price.'
     },
     promoPrice: {
-        type: String,
+        type: Number,
         required: 'Enter a promotional price.'
     }
 });
