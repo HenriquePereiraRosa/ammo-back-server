@@ -30,6 +30,15 @@ export class ResourceController {
             res.json(resource);
         });
     }
+    // Find all that matches
+    public findResources(req: Request, res: Response) {
+        Resource.find({}, (err, resource) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(resource);
+        });
+    }
     // Get specific resource
     public getContactWithID(req: Request, res: Response) {
         Resource.findById(req.params.id, (err, resource) => {
