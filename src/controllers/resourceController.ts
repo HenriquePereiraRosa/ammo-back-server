@@ -32,7 +32,7 @@ export class ResourceController {
     }
     // Find all that matches
     public findResources(req: Request, res: Response) {
-        Resource.find({}, (err, resource) => {
+        Resource.find(req.params, (err, resource) => {
             if (err) {
                 res.send(err);
             }
