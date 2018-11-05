@@ -29,5 +29,10 @@ export class Routes {
             .put(this.resourceController.updateResource)
             // DELETE endpoint
             .delete(this.resourceController.deleteContact);
+
+        // ToDo get resources that matches
+        app.route('/search')
+            // get specific resource
+            .get(this.resourceController.findResources);
     }
 }
