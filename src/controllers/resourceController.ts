@@ -41,7 +41,7 @@ export class ResourceController {
         });
     }
     // Get specific resource
-    public getContactWithID(req: Request, res: Response) {
+    public getResourcetWithID(req: Request, res: Response) {
         Resource.findById(req.params.id, (err, resource) => {
             if (err) {
                 res.send(err);
@@ -59,7 +59,7 @@ export class ResourceController {
         });
     }
     // Delete a resource
-    public deleteContact (req: Request, res: Response) {
+    public deleteResource (req: Request, res: Response) {
         Resource.deleteOne({ _id: req.params.id }, (err, resource) => {
             if(err){
                 res.send(err);

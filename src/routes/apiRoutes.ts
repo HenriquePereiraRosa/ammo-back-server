@@ -24,11 +24,11 @@ export class Routes {
         // ToDo get, put and delete a specific resource
         app.route('/resource/:id')
             // get specific resource
-            .get(this.resourceController.getContactWithID)
+            .get(this.resourceController.getResourcetWithID)
             // PUT endpoint
             .put(this.resourceController.updateResource)
             // DELETE endpoint
-            .delete(this.resourceController.deleteContact);
+            .delete(this.resourceController.deleteResource);
 
         // ToDo get resources that matches
         app.route('/search')
